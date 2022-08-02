@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href='{% static "css/style.css" %}' />
+</head>
+<body>
+    <h1>Here is a test</h1>
+    <div class="tableee">
+    {% if acc_rec %}
+        <table>
+            <thead>
+                <th>Name</th>
+                <th>Date</th>
+            </thead>
+                {% for acc in acc_rec %}
+                    <tr>
+                        <td>{{ acc.name }}</td>
+                        <td>{{ acc.date }}</td>
+                    </tr>
+                {% endfor %}
+        </table>
+    {% else %}
+        <p>No records found</p>
+    {% endif %}
+</div>
+</body>
+</html>
